@@ -41,3 +41,23 @@ def _isAnagram(str1, str2):
 s = u'anagram'
 t = u'nagaram'
 print _isAnagram(s, t)
+
+
+########################################################
+
+'''
+Given one string s, write a function to determine which characters repete.
+For example,
+s = "anagram", return "a".
+Note:
+You may assume the string contains only lowercase alphabets.
+'''
+def _duplicateCharacters(s):
+    d = {}
+    for c in s:
+        d[c] = d[c] + 1 if d.get(c) else 1
+    return [key for key, value in d.iteritems() if value > 1]
+
+# test
+s = 'anagram program'
+print _duplicateCharacters(s)
